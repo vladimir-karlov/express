@@ -1,5 +1,6 @@
 import { CRUD } from '../../common/interfaces/crud.interface';
 import { GenericInMemoryDao } from '../../daos/in.memory.dao';
+
 export class UsersService implements CRUD {
     private static instance: UsersService;
     dao: GenericInMemoryDao;
@@ -27,6 +28,10 @@ export class UsersService implements CRUD {
         return this.dao.getUsers();
     };
 
+    getByEmail(email: string) {
+        return this.dao.getByEmail(email);
+    } 
+    
     patchById(resource: any) {
         return this.dao.patchUserById(resource)
     };

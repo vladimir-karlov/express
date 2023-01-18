@@ -20,7 +20,8 @@ export class GenericInMemoryDao {
             id: this.users.length + 1,
             uuid: uuid.v4(),
             username: user.username,
-            password: user.password
+            password: user.password,
+            email: user.email,
         });
     }
 
@@ -30,6 +31,10 @@ export class GenericInMemoryDao {
 
     getUserById(userId: string) {
         return this.users.find((user: { id: string; }) => user.id === userId);
+    }
+
+    getByEmail(email: string) {
+        return this.users.find((user: { email: string; }) => user.email === email);        
     }
 
     putUserById(user: any) {
