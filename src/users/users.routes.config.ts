@@ -33,21 +33,18 @@ export class UsersRoutes extends CommonRoutesConfig implements configureRoutes {
         this.app.patch(`/users/:userId`, [
             usersMiddleware.validateUserExists,
             usersMiddleware.extractUserId,
-            // example
             (req: any, res: any) => usersController.patch(req, res)
         ]);
 
         this.app.delete(`/users/:userId`, [
             usersMiddleware.validateUserExists,
-            usersMiddleware.extractUserId,
-            // example            
+            usersMiddleware.extractUserId,          
             (req: any, res: any) => usersController.removeUser(req, res)
         ]);
         
         this.app.get(`/users/:userId`, [
+            usersMiddleware.extractUserId,             
             usersMiddleware.validateUserExists,
-            usersMiddleware.extractUserId,
-            // example            
             (req: any, res: any) => usersController.getUserById(req, res)
         ]);
     }

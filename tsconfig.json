@@ -1,18 +1,3 @@
-// {
-//   "compilerOptions": {
-//    "target": "es2016",
-//    "module": "commonjs",
-//    "outDir": "./dist",
-//    //"rootDir": "src",
-//    "strict": true,
-//    "esModuleInterop": true,
-//    "inlineSourceMap": true,
-//    "skipLibCheck": true,
-//    "types": []
-//   },
-//   //"include": ["src"],
-//   //"exclude": ["node_modules"]
-// }
 {
   "compilerOptions": {
     "outDir": "./dist",
@@ -117,7 +102,7 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "app/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",

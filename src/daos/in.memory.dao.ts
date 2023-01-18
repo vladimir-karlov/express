@@ -29,7 +29,7 @@ export class GenericInMemoryDao {
         return this.users;
     }
 
-    getUserById(userId: string) {
+    getUserById(userId: number) {
         return this.users.find((user: { id: string; }) => user.id === userId);
     }
 

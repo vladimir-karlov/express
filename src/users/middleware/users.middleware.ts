@@ -30,6 +30,7 @@ export class UsersMiddleware {
 
     async validateUserExists(req: express.Request, res: express.Response, next: express.NextFunction) {
         const userService = UsersService.getInstance();
+        console.log(req.body.id);
         const user = await userService.readById(req.params.userId);
         if (user) {
             next();
@@ -39,7 +40,8 @@ export class UsersMiddleware {
     }
 
     async extractUserId(req: express.Request, res: express.Response, next: express.NextFunction) {
-        req.body.id = req.params.userId;
+        //req.body.id = req.params.userId;
+        req.body.id = 1 ? parseInt(req.params.userId) : null;
         next();
     }
 }

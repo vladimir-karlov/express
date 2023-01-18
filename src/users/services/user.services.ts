@@ -36,7 +36,7 @@ export class UsersService implements CRUD {
         return this.dao.patchUserById(resource)
     };
 
-    readById(resourceId: any) {
+    readById(resourceId: number) {
         return this.dao.getUserById(resourceId);
     };
 

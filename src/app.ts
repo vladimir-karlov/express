@@ -29,3 +29,5 @@ app.use((req: any, res: any, next: any) => {
     res.status(404).send("Sorry, I can't find that! " + `Received ${req.method} request for ${req.url}`);
     next();    
 }); 
+
+export default app;
